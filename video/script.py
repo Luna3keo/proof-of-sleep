@@ -107,7 +107,7 @@ def write_markdown(takes):
         for line in take["lines"]:
             out += [f"- {line['say']}  ", f"  On screen: *{line['show']}*"]
         out.append("")
-    (ROOT / "docs" / "DEMO_SCRIPT.md").write_text("\n".join(out), encoding="utf-8")
+    (ROOT / "docs" / "DEMO_SCRIPT.md").write_bytes("\n".join(out).encode("utf-8"))   # LF on every system
 
 
 if __name__ == "__main__":
